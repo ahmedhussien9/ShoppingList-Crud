@@ -1,0 +1,23 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Shopping Items</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="nagivateToAddShoppingItem()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+   <ion-list>
+      <ion-item *ngFor="let item of ShoppingListRef$ | async" (click)="ManageItem(item)">
+         <h2>Item Name : {{item.itemName}}</h2>
+         <h5>Amount : {{item.itemNumber}}</h5>
+      </ion-item>
+   </ion-list>
+</ion-content>
